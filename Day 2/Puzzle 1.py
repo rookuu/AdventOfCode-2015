@@ -15,6 +15,7 @@ Author: Luke "rookuu" Roberts
 inputFile = open('input.txt')
 dataFromFile = inputFile.read().splitlines()
 totalAmount = 0
+totalAmount2 = 0
 
 for elements in dataFromFile:
     dimensions = elements.split("x")
