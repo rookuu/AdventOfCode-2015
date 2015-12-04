@@ -11,20 +11,13 @@ Solution to Day 3 - Puzzle 1 of the Advent Of Code 2015 series of challenges.
 Author: Luke "rookuu" Roberts
 """
 
-housesVisited = 1
 coordinate = [0,0]
-listOfXCoords = [0]
-listOfYCoords = [0]
-listOfCoords = []
-listOfUniqueCoords = []
-counter = 1
-isUnique = True
-
+visitedCoords = set()
+visitedCoords.add((coordinate[0],coordinate[1]))
 inputFile = open('input.txt')
 dataFromFile = inputFile.read()
 
 for characters in dataFromFile:
-
     if characters == "<":
         coordinate[0] += -1
     elif characters == ">":
@@ -34,18 +27,6 @@ for characters in dataFromFile:
     elif characters == "v":
         coordinate[1] += -1
 
-    listOfXCoords.append(coordinate[0])
-    listOfYCoords.append(coordinate[1])
+    visitedCoords.add((coordinate[0],coordinate[1]))
 
-    listOfCoords.append([listOfXCoords[len(listOfXCoords)-1],listOfYCoords[len(listOfYCoords)-1]])
-
-for items in listOfCoords:
-    isUnique = True
-    for items2 in listOfUniqueCoords:
-        if items == items2:
-            isUnique = False
-
-    if isUnique is True:
-        listOfUniqueCoords.append(items)
-
-print len(listOfUniqueCoords)
+print "The number of unique houses visited is: " + str(len(visitedCoords))
