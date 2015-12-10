@@ -1,0 +1,7 @@
+Same code as puzzle 1, just replace the statement on line 55 of the input file with
+the answer you got for puzzle 1 assigned to b.
+
+For example:
+My answer to puzzle 1 was 16076
+
+Line 55 of input.txt: 16076 -> b
